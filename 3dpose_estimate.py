@@ -31,8 +31,8 @@ import cv2
 # ── hmr2.0 imports ────────────────────────────────────────────────────────────
 # Assumes this script lives inside the hmr2.0 clone root, or that
 # hmr2.0/src is on PYTHONPATH.
-HMR2_ROOT = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HMR2_ROOT, 'src'))
+HMR_ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HMR_ROOT, 'src'))
 
 from main.config import Config
 from main.model import Model
@@ -59,7 +59,7 @@ def load_model():
 
     # Point to the log dir where you unpacked the pretrained weights:
     #   logs/paired(joints)/base_model/
-    cfg.LOG_DIR = os.path.join(HMR2_ROOT, 'logs', SETTING, MODEL_NAME)
+    cfg.LOG_DIR = os.path.join(HMR_ROOT, 'logs', SETTING, MODEL_NAME)
 
     model = Model()
     return model
